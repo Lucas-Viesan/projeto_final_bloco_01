@@ -6,10 +6,10 @@ public class LivroDidatico extends Livro {
 	private String disciplina;
 	private String ano;
 	
-	public LivroDidatico(String titulo, String autor, String id, String disciplina, String ano) {
+	public LivroDidatico(String titulo, String autor, String id, String disciplina) {
 		super(titulo, autor, id);
 		this.disciplina = disciplina;
-		this.ano = ano;
+		
 	}
 	
 	//Getters e Setters
@@ -22,16 +22,13 @@ public class LivroDidatico extends Livro {
 		this.disciplina = disciplina;
 	}
 
-	public String getAno() {
-		return ano;
-	}
 
-	public void setAno(String ano) {
-		this.ano = ano;
-	}
 	
 	
-	
+	 @Override
+	    public String toString() {
+	        return super.toString() + ", Disciplina: " + disciplina;
+	    }
 	
 
 }

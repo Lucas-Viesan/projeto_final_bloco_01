@@ -41,7 +41,10 @@ public abstract class Livro {
 		}
  
 
-	    
+		@Override
+	    public String toString() {
+	        return "Título: " + titulo + ", Autor: " + autor + ", ID: " + id;
+	    }
 	    
 	    
 }
