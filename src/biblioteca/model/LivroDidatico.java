@@ -4,7 +4,7 @@ package biblioteca.model;
 
 public class LivroDidatico extends Livro {
 	private String disciplina;
-	private String ano;
+
 	
 	public LivroDidatico(String titulo, String autor, String id, String disciplina) {
 		super(titulo, autor, id);

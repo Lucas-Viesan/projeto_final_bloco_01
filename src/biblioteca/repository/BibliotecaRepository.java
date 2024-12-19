@@ -1,5 +1,5 @@
 package biblioteca.repository;
-import java.util.List;
+
 import biblioteca.model.Livro;
 
 public interface BibliotecaRepository {
