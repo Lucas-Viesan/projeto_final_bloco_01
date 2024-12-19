@@ -1,5 +1,6 @@
 package biblioteca;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import biblioteca.model.Livro;
 import biblioteca.model.LivroDidatico;
@@ -34,6 +35,14 @@ public class Menu {
             System.out.println("Entre com a opção desejada:                          ");
             System.out.println("                                                     ");
 
+			try {
+				opcao = scan.nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("\nDigite valores inteiros!");
+				scan.nextLine();
+				opcao=0;
+			}
+            
             opcao = scan.nextInt();
             scan.nextLine(); 
             
@@ -44,7 +53,7 @@ public class Menu {
             }
             
             switch (opcao) {
-                case 1: {
+                case 1: 
                     System.out.print("Título: ");
                     titulo = scan.nextLine();
                     System.out.print("Autor: ");
@@ -65,16 +74,17 @@ public class Menu {
                     
                     livroController.atualizar(livro);  
                     System.out.println("Livro adicionado com sucesso!");
-                }
+                    break;
                 case 2:
                 	System.out.println("\n Listar todas as Contas");
                 	livroController.listarTodos();
-                case 3: {
+                	break;
+                case 3: 
                     System.out.print("ID do livro a ser buscado: ");
                     id = scan.nextLine();
                     livroController.procurarPorID(id);
-                }
-                case 4:  {
+                    break;
+                case 4:  
                     System.out.print("ID do livro a ser atualizado: ");
                     id = scan.nextLine();
                     System.out.print("Novo Título: ");
@@ -82,7 +92,7 @@ public class Menu {
                     System.out.print("Novo Autor: ");
                     String novoAutor = scan.nextLine();
                     System.out.print("O livro atualizado é didático? (s/n): ");
-                    String isDidatico = scan.nextLine();
+                    isDidatico = scan.nextLine();
 
                     Livro novoLivro;
                     if (isDidatico.equalsIgnoreCase("s")) {
@@ -95,13 +105,13 @@ public class Menu {
                     
                     livroController.atualizar(novoLivro);  
                     System.out.println("Livro atualizado com sucesso!");
-                }
-                case 5: {
+                    break;
+                case 5: 
                     System.out.print("ID do livro a ser removido: ");
                     id = scan.nextLine();
                     livroController.deletar(id);  
                     System.out.println("Livro removido com sucesso!");
-                }
+                    break;
                 default:
                 	System.out.println("Opção inválida!");
             }
